@@ -1,0 +1,67 @@
+@import "src/assets/colors.scss";
+@import "src/assets/animations.scss";
+
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  height: 100%;
+}
+
+mat-sidenav {
+  background-color: #f4f4f4;
+}
+
+.sidenav-list span {
+  padding-left: 8px;
+}
+
+.sidenav-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  a{
+    mat-icon{
+      color: $accent;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .content-container {
+    flex-direction: row !important;
+    height: 100vh !important;
+
+    app-reccomendation {
+      width: 30% !important;
+      min-width: 30rem !important;
+      max-width: 45rem !important;
+      overflow-y: scroll !important;
+    }
+
+    app-content {
+      flex: 1;
+      overflow-y: scroll !important;
+      height: 100%;
+    }
+  }
+}
+
+.content-container{
+  height: unset;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
+  app-content {
+    flex: 1;
+    overflow-y: hidden;
+  }
+
+  app-reccomendation {
+    overflow-y: hidden;
+    width: 100%;
+    min-width: 30rem;
+    max-width: none;
+  }
+}

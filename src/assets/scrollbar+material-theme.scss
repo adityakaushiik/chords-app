@@ -1,0 +1,36 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$chords-app-primary: mat.define-palette(mat.$indigo-palette);
+$chords-app-accent: mat.define-palette(mat.$pink-palette);
+$chords-app-warn: mat.define-palette(mat.$red-palette);
+
+$chords-app-theme: mat.define-light-theme((
+  color: (
+    primary: $chords-app-primary,
+    accent: $chords-app-accent,
+    warn: $chords-app-warn,
+  )
+));
+
+@include mat.all-component-themes($chords-app-theme);
+
+/*/////////////Scroll bar//////////////////*/
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d3d3d3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #d3d3d3;
+}

@@ -1,0 +1,25 @@
+<mat-card class="main-content-card">
+  <mat-card-header>
+    <mat-card-title><h1>Perfect</h1></mat-card-title>
+    <mat-card-title><h2>- Ed Sheeran</h2></mat-card-title>
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-content>
+    <span *ngFor="let line of songLines">
+      <span class="chord-lyrics-container">
+        <span *ngFor="let spacing of line.chords">
+          <span *ngIf="isNumber(spacing)">
+            <span *ngFor="let item of [].constructor(convertToNumber(spacing))">&nbsp;</span>
+          </span>
+          <span *ngIf="!isNumber(spacing)" class="chords" matTooltip="{{spacing}} chord"
+                matTooltipPosition="above">{{spacing}}</span>
+        </span>
+        <br>
+      </span>
+      <span class="lyrics">{{line.lyrics.join(' ')}}</span>
+      <br>
+    </span>
+  </mat-card-content>
+</mat-card>
