@@ -1,0 +1,79 @@
+@import "src/assets/colors.scss";
+
+
+.parse-chords-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+
+  .vl {
+    border-left: 1px solid black;
+    height: 100%;
+  }
+
+  .text-area{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    resize: none;
+    font-size: 16px;
+
+    textarea{
+      height: 100%;
+      border: 1px solid $accent;
+      outline: none;
+      background-color: $secondary;
+      font-family: $body-font;
+    }
+  }
+
+  .view-main{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    resize: none;
+    font-size: 16px;
+  }
+}
+
+.chords {
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 700;
+  margin: -0.1em -0.5em -0.15em;
+  padding: 0 0.4em;
+  position: relative;
+  background-color: $secondary;
+
+  &:hover {
+    filter: brightness(85%);
+  }
+}
+
+.lyrics {
+  font-size: 16px;
+}
+
+.combine {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.line {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+
+  .word {
+    margin-right: 12px;
+  }
+}

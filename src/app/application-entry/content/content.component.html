@@ -1,25 +1,40 @@
-<mat-card class="main-content-card">
-  <mat-card-header>
-    <mat-card-title><h1>Perfect</h1></mat-card-title>
-    <mat-card-title><h2>- Ed Sheeran</h2></mat-card-title>
-  </mat-card-header>
+<div class="content-card">
+  <header>
+    <div class="content-titles">
+      <h1>Shape Of You</h1>
+      <h2>- Ed Sheeran</h2>
+    </div>
+    <div class="content-actions">
+      <custom-fab-button (mouseenter)="likedButtonHover=true" (mouseleave)="likedButtonHover=false"
+                         matTooltip="add to favourites">
+        <mat-icon *ngIf="!likedButtonHover" class="mini-fab-color">favorite_border</mat-icon>
+        <mat-icon color="warn" *ngIf="likedButtonHover">favorite</mat-icon>
+      </custom-fab-button>
+      <custom-fab-button matTooltip="add to playlist">
+        <mat-icon class="mini-fab-color">playlist_add</mat-icon>
+      </custom-fab-button>
+      <custom-fab-button matTooltip="share">
+        <mat-icon class="mini-fab-color">share</mat-icon>
+      </custom-fab-button>
+    </div>
+  </header>
 
   <mat-divider></mat-divider>
 
-  <mat-card-content>
-    <span *ngFor="let line of songLines">
-      <span class="chord-lyrics-container">
-        <span *ngFor="let spacing of line.chords">
-          <span *ngIf="isNumber(spacing)">
-            <span *ngFor="let item of [].constructor(convertToNumber(spacing))">&nbsp;</span>
-          </span>
-          <span *ngIf="!isNumber(spacing)" class="chords" matTooltip="{{spacing}} chord"
-                matTooltipPosition="above">{{spacing}}</span>
+  <div class="content-main">
+    <span *ngFor="let line of refinedSong" class="line">
+      <span *ngFor="let word of line.line" class="word">
+        <span class="combine">
+          <span class="chords" *ngIf="word.chord != null"
+                matTooltip="{{word.chord}} chord" matTooltipPosition="above">{{word.chord}}</span>
+          <span class="lyrics">{{word.lyrics}}</span>
         </span>
-        <br>
       </span>
-      <span class="lyrics">{{line.lyrics.join(' ')}}</span>
-      <br>
     </span>
-  </mat-card-content>
-</mat-card>
+  </div>
+
+  <mat-divider></mat-divider>
+<!--  <app-parsing-chords></app-parsing-chords>-->
+</div>
+
+

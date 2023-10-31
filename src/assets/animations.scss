@@ -55,6 +55,11 @@
   animation-name: fadeIn;
   animation-duration: 0.4s !important;
 }
+@mixin animate__fadeIn($animation-duration:0.4s) {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  animation-duration: $animation-duration !important;
+}
 /*///////////////////////////////*/
 @-webkit-keyframes zoomIn {
   from {

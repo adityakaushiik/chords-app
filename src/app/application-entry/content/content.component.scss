@@ -1,40 +1,30 @@
 @import "/src/assets/colors.scss";
 
-.main-content-card {
-  //position: relative;
-  //width: calc(100% - 230px);
-  //left: 230px;
-  //transition: all 0.3s ease;
-
-
-  border-bottom: thick solid $primary;
-  border-right: none;
+.content-card {
   background-color: transparent;
-  padding: 0px 10px;
+  padding: 20px;
   box-shadow: none;
   border-radius: 0px;
   height: 100%;
 
-  @media screen and (min-width: 1024px) {
-    border-bottom: none;
-    border-right: thick solid $primary;
-  }
+  header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-  mat-card-header {
-    mat-card-title {
-      h1 {
-        color: $accent;
-        margin: 0px 0px 10px 0px;
-      }
+    .content-titles{
 
-      h2 {
-        margin: 0px 0px 10px 0px;
-      }
+    }
+
+    .content-actions{
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
     }
   }
 
-  mat-card-content {
-    margin-top: 20px;
+  .content-main {
+    padding: 20px 0px;
   }
 }
 
@@ -43,27 +33,32 @@
   cursor: pointer;
   font-weight: 700;
   margin: -0.1em -0.5em -0.15em;
-  padding: 0.1em 0.5em .15em;
+  padding: 0 0.4em;
   position: relative;
-  background-color: #d2d2c7;
+  background-color: $secondary;
 
   &:hover {
     filter: brightness(85%);
   }
 }
 
-.chords::after {
-  border-radius: 2px;
-  bottom: 0.2em;
-  content: "";
-  left: 0.25em;
-  opacity: .1;
-  position: absolute;
-  right: 0.25em;
-  top: 0.2em;
-  background-color: antiquewhite !important;
-}
-
 .lyrics {
   font-size: 16px;
+}
+
+.combine {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.line {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+
+  .word {
+    margin-right: 12px;
+  }
 }

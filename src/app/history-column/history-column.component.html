@@ -1,12 +1,22 @@
-<mat-card class="card-container">
-  <mat-card-header class="card-header">
-    <p> History </p>
-  </mat-card-header>
+<div class="card-container">
+  <header class="card-header">
+    <a>
+      <mat-icon>save</mat-icon>
+    </a>
+
+    <p>History</p>
+
+    <a>
+      <mat-icon>cancel</mat-icon>
+    </a>
+  </header>
+
   <mat-divider></mat-divider>
-  <mat-card-content class="card-content">
-      <mat-card class="card" *ngFor="let media of a">
-          <mat-card-title>Tum se milke</mat-card-title>
-          <mat-card-subtitle>Mohit Chauhan</mat-card-subtitle>
-      </mat-card>
-  </mat-card-content>
-</mat-card>
+
+  <div class="card-content">
+    <custom-card *ngFor="let media of a">
+      <h4 class="title">Tum se milke</h4>
+      <p class="subtitle">Mohit Chauhan</p>
+    </custom-card>
+  </div>
+</div>

@@ -1,47 +1,13 @@
-<mat-sidenav-container>
-  <mat-sidenav
-    #sidenav
-    mode="side"
-    opened
-    autoSize
-    (mouseenter)="mouseEntered = true"
-    (mouseleave)="mouseEntered = false"
-  >
-    <mat-nav-list class="sidenav-list">
-      <a
-        mat-list-item
-        matTooltip="Account"
-        matTooltipPosition="right"
-      >
-        <mat-icon>account_circle</mat-icon>
-      </a>
-      <a mat-list-item matTooltip="History" matTooltipPosition="right"
-         (click)="openComponentOverlay()">
-        <mat-icon>history</mat-icon>
-      </a>
-      <a mat-list-item matTooltip="Liked" matTooltipPosition="right">
-        <mat-icon>thumb_up</mat-icon>
-      </a>
-      <a mat-list-item matTooltip="Favourites" matTooltipPosition="right">
-        <mat-icon>favorite_border</mat-icon>
-        <!--        <mat-icon>favorite</mat-icon>-->
-      </a>
-      <a mat-list-item matTooltip="My Lists" matTooltipPosition="right">
-        <mat-icon> list_alt</mat-icon>
-      </a>
+<div style="display: flex ; flex-direction: row">
+  <app-side-bar [class.close]="toggleSidenav" [toggleSidenav]="toggleSidenav"></app-side-bar>
 
-      <div class="spacer"></div>
+  <div class="main">
+    <app-nav-bar (toggleSidenav)="toggleSidenav=!toggleSidenav"></app-nav-bar>
 
-      <a mat-list-item matTooltip="Options/Settings" matTooltipPosition="right">
-        <mat-icon>settings</mat-icon>
-      </a>
-    </mat-nav-list>
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <div class="content-container">
+    <div class="main-content">
       <app-content></app-content>
       <app-reccomendation></app-reccomendation>
     </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </div>
+
+</div>

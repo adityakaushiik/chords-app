@@ -1,67 +1,54 @@
 @import "src/assets/colors.scss";
 @import "src/assets/animations.scss";
 
-mat-sidenav-container,
-mat-sidenav-content,
-mat-sidenav {
-  height: 100%;
+
+app-side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $sidenav-open-width;
+  height: 100vh;
+  transition: all 0.3s ease;
 }
 
-mat-sidenav {
-  background-color: #f4f4f4;
-}
-
-.sidenav-list span {
-  padding-left: 8px;
-}
-
-.sidenav-list {
+.main {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  position: relative;
+  width: calc(100% - $sidenav-open-width);
+  left: $sidenav-open-width;
+  transition: all 0.3s ease;
 
-  a{
-    mat-icon{
-      color: $accent;
-    }
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .content-container {
-    flex-direction: row !important;
-    height: 100vh !important;
-
-    app-reccomendation {
-      width: 30% !important;
-      min-width: 30rem !important;
-      max-width: 45rem !important;
-      overflow-y: scroll !important;
-    }
+  .main-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    left: 0;
+    transition: all 0.3s ease;
+    height: calc(100vh - $navbar-height);
 
     app-content {
-      flex: 1;
-      overflow-y: scroll !important;
-      height: 100%;
+      width: 70%;
+      overflow-y: scroll;
+    }
+
+    app-reccomendation {
+      width: 30%;
+      overflow-y: scroll;
     }
   }
 }
 
-.content-container{
-  height: unset;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
+.close {
+  width: $sidenav-close-width;
+}
 
-  app-content {
-    flex: 1;
-    overflow-y: hidden;
-  }
+.close ~ .main {
+  width: calc(100% - $sidenav-close-width);
+  left: $sidenav-close-width;
+}
 
-  app-reccomendation {
-    overflow-y: hidden;
-    width: 100%;
-    min-width: 30rem;
-    max-width: none;
-  }
+
+@media screen and (min-width: 1240px) {
+
 }

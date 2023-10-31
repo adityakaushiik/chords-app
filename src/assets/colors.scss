@@ -1,23 +1,23 @@
-//darktheme
-//$theme-map-dark: (
-//  $text: #eff0ef,
-//  $background: #000000,
-//  $primary: #818288,
-//  $secondary: #0d0d0d,
-//  $accent: #c1bdbe,
-//);
-////lighttheme
-//$theme-map-light: (
-//  $text: #000000,
-//  $background: #eff0ef,
-//  $primary: #818288,
-//  $secondary: #d9d9d9,
-//  $accent: #766f71,
-//);
 $heading-font: Montserrat, 'Helvetica Neue', sans-serif;
 $body-font: Nunito, 'Helvetica Neue', sans-serif;
-$text: #000000;
-$background: #eff0ef;
-$primary: #818288;
-$secondary: #d9d9d9;
-$accent: #766f71;
+
+$desktop-width: 1440px;
+$laptop-width: 1024px;
+$mobile-width: 768px;
+
+$text: #1e1815;
+$background: #f9f7f6;
+$primary: #606985;
+$secondary: #c2c7d3;
+$accent: #424656;
+
+//$text: #f9f7f6;
+//$background: #1e1815;
+//$primary: #A6ABBD;
+//$secondary: #28282c;
+//$accent: #b5bac9;
+
+$sidenav-open-width: 190px;
+$sidenav-close-width: 60px;
+$navbar-height: 60px;
+$recommendation-width: 30%;

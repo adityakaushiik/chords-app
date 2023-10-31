@@ -13,19 +13,27 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatIconModule} from "@angular/material/icon";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatTooltipModule} from "@angular/material/tooltip";
-import {ReccomendationComponent} from "./application-entry/content/reccomendation/reccomendation.component";
 import { SideBarComponent } from './application-entry/side-bar/side-bar.component';
 import { NavBarComponent } from './application-entry/nav-bar/nav-bar.component';
-
+import {RecommendationComponent} from "./application-entry/recommendation/recommendation.component";
+import {MatButtonModule} from "@angular/material/button";
+import { CustomFabButtonComponent } from './utils/custom-fab-button/custom-fab-button.component';
+import { CustomCardComponent } from './utils/custom-card/custom-card.component';
+import { ParsingChordsComponent } from './parsing-chords/parsing-chords.component';
+import {FormsModule} from "@angular/forms";
+import {TooltipModule} from "./common/ui/tooltip/tooltip.module";
 @NgModule({
   declarations: [
     AppComponent,
     ApplicationEntryComponent,
     HistoryColumnComponent,
     ContentComponent,
-    ReccomendationComponent,
     SideBarComponent,
-    NavBarComponent
+    NavBarComponent,
+    RecommendationComponent,
+    CustomFabButtonComponent,
+    CustomCardComponent,
+    ParsingChordsComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +45,9 @@ import { NavBarComponent } from './application-entry/nav-bar/nav-bar.component';
     MatIconModule,
     MatToolbarModule,
     MatTooltipModule,
+    MatButtonModule,
+    FormsModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -22,15 +22,15 @@ $chords-app-theme: mat.define-light-theme((
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #eee;
+  background: #dcdcdc;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #d3d3d3;
+  background: #c2c2c2;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #d3d3d3;
+  background: #b2b2b2;
 }

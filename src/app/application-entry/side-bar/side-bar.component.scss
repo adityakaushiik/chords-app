@@ -1,124 +1,129 @@
-.sidebar{
+@import "/src/assets/colors.scss";
+@import "/src/assets/animations.scss";
+
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  background: var(--light);
-  width: 230px;
+  background: $background;
+  width: $sidenav-open-width;
   height: 100%;
   z-index: 2000;
   overflow-x: hidden;
   scrollbar-width: none;
   transition: all 0.3s ease;
+  box-shadow: 0px 0px 10px hsla(0, 0%, 40%, 0.75);
+
+  .logo-container {
+    @include animate__fadeIn(1s);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    height: $navbar-height*2;
+
+    .logo {
+      max-width: 105px;
+      padding: 0px 5px 0px 5px;
+    }
+
+    .text1, .text2 {
+      position: absolute;
+      opacity: 1;
+      font-size: 25px;
+      font-weight: 600;
+      transition: opacity 0.1s ease;
+      margin: 0;
+    }
+
+    .text1 {
+      font-weight: 600;
+      font-size: 25px;
+      top: 26px;
+      left: 26px;
+    }
+
+    .text2 {
+      right: 9px;
+      bottom: 14px;
+    }
+  }
+
+  .sidenav-list {
+    //padding: 15px 0px 5px 5px;
+    padding: 20rem 0px 30rem 5px;
+    height: calc(100vh - $navbar-height * 2);
+    display: flex;
+    flex-direction: column;
+
+    li {
+      height: 48px;
+      background: transparent;
+      margin-left: 6px;
+      border-radius: 48px 0 0 48px;
+      padding: 4px;
+
+      a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-radius: 48px;
+        font-size: 20px;
+        color: $primary;
+        white-space: nowrap;
+        overflow-x: hidden;
+        transition: all 0.3s ease;
+
+        &:hover {
+          filter: brightness(110%);
+          transform: scale(1.1);
+          margin-left: 20px;
+          cursor: pointer;
+        }
+
+        span {
+          transition: linear 0.3s ease;
+        }
+
+        mat-icon {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
 }
 
-.sidebar::-webkit-scrollbar{
-  display: none;
-}
-
-.sidebar.close{
+.sidebar.close {
   width: 60px;
-}
 
-.sidebar .logo{
-  font-size: 24px;
-  font-weight: 700;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  color: var(--primary);
-  z-index: 500;
-  padding-bottom: 20px;
-  box-sizing: content-box;
-}
+  .logo-container {
+    h3 {
+      opacity: 0;
+      width: 0px;
+    }
+  }
 
-.sidebar .logo .logo-name span{
-  color: var(--dark);
-}
+  .sidenav-list {
+    li {
+      a {
+        span {
+          opacity: 0;
+          display: none;
+          transition: all 0.3s ease;
+        }
 
-.sidebar .logo .bx{
-  min-width: 60px;
-  display: flex;
-  justify-content: center;
-  font-size: 2.2rem;
-}
+        mat-icon {
+          margin-right: 0px;
+        }
 
-.sidebar .side-menu{
-  width: 100%;
-  margin-top: 48px;
-}
-
-.sidebar .side-menu li{
-  height: 48px;
-  background: transparent;
-  margin-left: 6px;
-  border-radius: 48px 0 0 48px;
-  padding: 4px;
-}
-
-.sidebar .side-menu li.active{
-  background: var(--grey);
-  position: relative;
-}
-
-.sidebar .side-menu li.active::before{
-  content: "";
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  top: -40px;
-  right: 0;
-  box-shadow: 20px 20px 0 var(--grey);
-  z-index: -1;
-}
-
-.sidebar .side-menu li.active::after{
-  content: "";
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  bottom: -40px;
-  right: 0;
-  box-shadow: 20px -20px 0 var(--grey);
-  z-index: -1;
-}
-
-.sidebar .side-menu li a{
-  width: 100%;
-  height: 100%;
-  background: var(--light);
-  display: flex;
-  align-items: center;
-  border-radius: 48px;
-  font-size: 16px;
-  color: var(--dark);
-  white-space: nowrap;
-  overflow-x: hidden;
-  transition: all 0.3s ease;
-}
-
-.sidebar .side-menu li.active a{
-  color: var(--success);
-}
-
-.sidebar.close .side-menu li a{
-  width: calc(48px - (4px * 2));
-  transition: all 0.3s ease;
-}
-
-.sidebar .side-menu li a .bx{
-  min-width: calc(60px - ((4px + 6px) * 2));
-  display: flex;
-  font-size: 1.6rem;
-  justify-content: center;
-}
-
-.sidebar .side-menu li a.logout{
-  color: var(--danger);
-}
-
-.sidebar.close~.content{
-  width: calc(100% - 60px);
-  left: 60px;
+        &:hover {
+          margin-left: 0px;
+        }
+      }
+    }
+  }
 }

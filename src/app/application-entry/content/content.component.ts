@@ -1,101 +1,336 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-export interface SongLine {
-  chords: string[]; // Array of chords for the line
-  lyrics: string[]; // Array of lyrics for the line
+
+export interface ChordData {
+  chord: string;
+  position: number;
 }
 
+export interface SongLine {
+  chords: ChordData[];
+  lyrics: string[];
+}
+
+export interface combined {
+  chord?: string;
+  lyrics: string;
+}
+
+export interface lines {
+  line: combined[];
+}
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss'],
 })
-export class ContentComponent {
+export class ContentComponent implements OnInit {
+  likedButtonHover = false;
+
+
+  // songLines: SongLine[] = [
+  //   {
+  //     chords: [
+  //       {chord: 'C', position: 0},
+  //       {chord: 'G', position: 4},
+  //     ],
+  //     lyrics: ['I', 'found', 'a', 'love', 'for', 'me']
+  //   },
+  //   {
+  //     chords: [
+  //       {chord: 'C', position: 0},
+  //       {chord: 'G', position: 4},
+  //     ],
+  //     lyrics: ['I', 'found', 'a', 'love', 'for', 'me']
+  //   },
+  // ];
+
 
   songLines: SongLine[] = [
     {
-      chords: ['3','G','6','Em'],
-      lyrics: ['I found a love for me'],
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 5},
+        {chord: 'G', position: 12},
+        {chord: 'A', position: 16},
+      ],
+      lyrics: [
+        "The", "club", "isn't", "the", "best", "place", "to", "find", "a", "lover", "so", "the", "bar", "is", "where", "I", "go"
+      ],
     },
     {
-      chords: ['4','C','10','D','13','G','15','Em7'],
-      lyrics: ['Darling, just dive right in, and follow my lead'],
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 5},
+        {chord: 'G', position: 12},
+        {chord: 'A', position: 15},
+      ],
+      lyrics: [
+        "Me", "and", "my", "friends", "at", "the", "table", "doing", "shots,", "drinking", "fast", "and", "then", "we", "talk", "slow"
+      ],
     },
     {
-      chords: ['2','G','25','Em'],
-      lyrics: ['Well, I found a girl beautiful and sweet'],
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
     },
     {
-      chords: ['4','F','50','Em'],
-      lyrics: ['I never knew you were the someone waiting for me'],
+      chords: [
+        {chord: 'G', position: 0},
+        {chord: 'A', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
+    },
+    {
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
+    },
+    {
+      chords: [
+        {chord: 'G', position: 0},
+        {chord: 'A', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
+    },
+    {
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 5},
+        {chord: 'G', position: 12},
+        {chord: 'A', position: 16},
+      ],
+      lyrics: [
+        "The", "club", "isn't", "the", "best", "place", "to", "find", "a", "lover", "so", "the", "bar", "is", "where", "I", "go"
+      ],
+    },
+    {
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 5},
+        {chord: 'G', position: 12},
+        {chord: 'A', position: 15},
+      ],
+      lyrics: [
+        "Me", "and", "my", "friends", "at", "the", "table", "doing", "shots,", "drinking", "fast", "and", "then", "we", "talk", "slow"
+      ],
+    },
+    {
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
+    },
+    {
+      chords: [
+        {chord: 'G', position: 0},
+        {chord: 'A', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
+    },
+    {
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
+    },
+    {
+      chords: [
+        {chord: 'G', position: 0},
+        {chord: 'A', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
+    },
+    {
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 3},
+        {chord: 'G', position: 8},
+      ],
+      lyrics: [
+        "I'm", "in", "love", "with", "the", "shape", "of", "you"
+      ],
     },{
-      chords: ['3','G','6','Em'],
-      lyrics: ['I found a love for me'],
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 5},
+        {chord: 'G', position: 12},
+        {chord: 'A', position: 16},
+      ],
+      lyrics: [
+        "The", "club", "isn't", "the", "best", "place", "to", "find", "a", "lover", "so", "the", "bar", "is", "where", "I", "go"
+      ],
     },
     {
-      chords: ['4','C','10','D','13','G','15','Em7'],
-      lyrics: ['Darling, just dive right in, and follow my lead'],
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 5},
+        {chord: 'G', position: 12},
+        {chord: 'A', position: 15},
+      ],
+      lyrics: [
+        "Me", "and", "my", "friends", "at", "the", "table", "doing", "shots,", "drinking", "fast", "and", "then", "we", "talk", "slow"
+      ],
     },
     {
-      chords: ['2','G','25','Em'],
-      lyrics: ['Well, I found a girl beautiful and sweet'],
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
     },
     {
-      chords: ['4','F','50','Em'],
-      lyrics: ['I never knew you were the someone waiting for me'],
-    },{
-      chords: ['3','G','6','Em'],
-      lyrics: ['I found a love for me'],
+      chords: [
+        {chord: 'G', position: 0},
+        {chord: 'A', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
     },
     {
-      chords: ['4','C','10','D','13','G','15','Em7'],
-      lyrics: ['Darling, just dive right in, and follow my lead'],
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
     },
     {
-      chords: ['2','G','25','Em'],
-      lyrics: ['Well, I found a girl beautiful and sweet'],
+      chords: [
+        {chord: 'G', position: 0},
+        {chord: 'A', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
     },
     {
-      chords: ['4','F','50','Em'],
-      lyrics: ['I never knew you were the someone waiting for me'],
-    },{
-      chords: ['3','G','6','Em'],
-      lyrics: ['I found a love for me'],
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 5},
+        {chord: 'G', position: 12},
+        {chord: 'A', position: 16},
+      ],
+      lyrics: [
+        "The", "club", "isn't", "the", "best", "place", "to", "find", "a", "lover", "so", "the", "bar", "is", "where", "I", "go"
+      ],
     },
     {
-      chords: ['4','C','10','D','13','G','15','Em7'],
-      lyrics: ['Darling, just dive right in, and follow my lead'],
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 5},
+        {chord: 'G', position: 12},
+        {chord: 'A', position: 15},
+      ],
+      lyrics: [
+        "Me", "and", "my", "friends", "at", "the", "table", "doing", "shots,", "drinking", "fast", "and", "then", "we", "talk", "slow"
+      ],
     },
     {
-      chords: ['2','G','25','Em'],
-      lyrics: ['Well, I found a girl beautiful and sweet'],
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
     },
     {
-      chords: ['4','F','50','Em'],
-      lyrics: ['I never knew you were the someone waiting for me'],
-    },{
-      chords: ['3','G','6','Em'],
-      lyrics: ['I found a love for me'],
+      chords: [
+        {chord: 'G', position: 0},
+        {chord: 'A', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
     },
     {
-      chords: ['4','C','10','D','13','G','15','Em7'],
-      lyrics: ['Darling, just dive right in, and follow my lead'],
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
     },
     {
-      chords: ['2','G','25','Em'],
-      lyrics: ['Well, I found a girl beautiful and sweet'],
+      chords: [
+        {chord: 'G', position: 0},
+        {chord: 'A', position: 4},
+      ],
+      lyrics: [
+        "Come", "on,", "be", "my", "baby,", "come", "on"
+      ],
     },
     {
-      chords: ['4','F','50','Em'],
-      lyrics: ['I never knew you were the someone waiting for me'],
+      chords: [
+        {chord: 'Bm', position: 0},
+        {chord: 'Em', position: 3},
+        {chord: 'G', position: 8},
+      ],
+      lyrics: [
+        "I'm", "in", "love", "with", "the", "shape", "of", "you"
+      ],
     },
   ];
 
-  isNumber(myString: string) {
-    return !isNaN(parseInt(myString));
+  refinedSong: lines[] = [
+    // {
+    //   line: [
+    //     {chord: 'C', lyrics: 'I'},
+    //     {lyrics: 'found'},
+    //     {lyrics: 'a'},
+    //     {lyrics: 'love'},
+    //     {chord: 'G', lyrics: 'for'},
+    //     {lyrics: 'me'}
+    //   ]
+    // }
+  ];
+
+  refineSong() {
+    for (let i = 0; i < this.songLines.length; i++) {
+      let songLine = this.songLines[i];
+      let line: combined[] = [];
+      for (let j = 0; j < songLine.lyrics.length; j++) {
+        let chord = songLine.chords.find(chord => chord.position === j);
+        let lyrics = songLine.lyrics[j];
+        if (chord) {
+          line.push({chord: chord.chord, lyrics: lyrics});
+        } else {
+          line.push({lyrics: lyrics});
+        }
+      }
+      this.refinedSong.push({line: line});
+    }
   }
 
-  convertToNumber(myString: string) {
-    return parseInt(myString);
+  ngOnInit(): void {
+    this.refineSong();
   }
 }

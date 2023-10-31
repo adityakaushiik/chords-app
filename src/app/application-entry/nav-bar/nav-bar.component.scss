@@ -1,0 +1,72 @@
+@import 'src/assets/colors.scss';
+
+mat-toolbar {
+  height: 60px;
+  background-color: transparent;
+  border-bottom: 1px solid $secondary;
+
+  .menu-button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    color: $primary;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  .searchbar {
+    display: flex;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    border: 1px solid $secondary;
+    padding: 0px 5px;
+
+
+    &:focus {
+      outline: none;
+      border: 1px solid $accent;
+    }
+
+    .search {
+      height: 100%;
+      background-color: transparent;
+      border: 0;
+
+      &:focus {
+        outline: none;
+        border: 0;
+      }
+    }
+
+    .search-btn {
+      display: flex;
+      border: 0;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+      background-color: transparent;
+      border-radius: inherit;
+      cursor: pointer;
+      color: $secondary;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  .recommendation-width-spacer {
+    width: $recommendation-width;
+  }
+}
+

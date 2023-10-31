@@ -1,0 +1,26 @@
+@import "src/assets/colors.scss";
+
+.recommendation-container {
+
+  header {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+
+    .recommendation-titles {
+      h3{
+        margin: 0;
+      }
+    }
+
+    .recommendation-actions {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-around;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<div class="parse-chords-container">
+  <div class="text-area">
+    <textarea [(ngModel)]="inputText"></textarea>
+    <button (click)="parseInput()" mat-raised-button>Parse</button>
+  </div>
+  <div class="vl"></div>
+  <custom-card class="view-main">
+    <span *ngFor="let line of refinedSong" class="line">
+      <span *ngFor="let word of line.line" class="word">
+        <span class="combine">
+          <span class="chords" *ngIf="word.chord != null"
+                matTooltip="{{word.chord}} chord" matTooltipPosition="above">{{word.chord}}</span>
+          <span class="lyrics">{{word.lyrics}}</span>
+        </span>
+      </span>
+    </span>
+  </custom-card>
+</div>

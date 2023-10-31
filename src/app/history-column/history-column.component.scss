@@ -2,19 +2,48 @@
 
 .card-container {
   height: 100%;
-  background-color: $secondary;
+  border-radius: 10px;
+  background-color: $primary;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 
-  .card-header {
-    justify-content: center;
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    padding: 0.5rem 1rem;
+    height: 40px;
 
     p{
+      font-size: 18px;
       margin: 0;
       color: $text;
+    }
+
+    a{
+      color: $accent;
+      &:hover{
+        color: $text;
+        cursor: pointer;
+      }
     }
   }
 
   .card-content {
+    height: calc(100% - 40px);
     overflow-y: scroll;
+
+    custom-card{
+      .title{
+        color: $accent;
+      }
+
+      .subtitle{
+        color: $text;
+      }
+    }
   }
 }
+
+

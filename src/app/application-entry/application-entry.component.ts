@@ -9,32 +9,8 @@ import { HistoryColumnComponent } from '../history-column/history-column.compone
   styleUrls: ['./application-entry.component.scss'],
 })
 export class ApplicationEntryComponent {
-  mouseEntered = false;
-
-  constructor(private overlay: Overlay) {}
-
-  openComponentOverlay() {
-    const positionStrategy = this.overlay
-      .position()
-      .global()
-      .centerVertically().left('60px');
+  toggleSidenav = false;
 
 
-    const overlayRef = this.overlay.create({
-      hasBackdrop: false,
-      minWidth: '350px',
-      maxWidth: '350px',
-      height: '99%',
-      positionStrategy: positionStrategy,
-      panelClass: ['animate__zoomIn'],
-    });
 
-    const popupComponentPortal = new ComponentPortal(HistoryColumnComponent);
-
-    overlayRef.attach(popupComponentPortal);
-
-    overlayRef._outsidePointerEvents.subscribe(() => {
-      overlayRef.dispose();
-    });
-  }
 }

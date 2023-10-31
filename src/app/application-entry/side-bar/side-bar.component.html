@@ -1,24 +1,56 @@
 <!-- Sidebar -->
-<div class="sidebar">
-  <a href="#" class="logo">
-    <i class='bx bx-code-alt'></i>
-    <div class="logo-name"><span>Asmr</span>Prog</div>
-  </a>
-  <ul class="side-menu">
-    <li><a href="#"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
-    <li><a href="#"><i class='bx bx-store-alt'></i>Shop</a></li>
-    <li class="active"><a href="#"><i class='bx bx-analyse'></i>Analytics</a></li>
-    <li><a href="#"><i class='bx bx-message-square-dots'></i>Tickets</a></li>
-    <li><a href="#"><i class='bx bx-group'></i>Users</a></li>
-    <li><a href="#"><i class='bx bx-cog'></i>Settings</a></li>
-  </ul>
-  <ul class="side-menu">
+<div class="sidebar" [class.close]="toggleSidenav">
+
+  <div class="logo-container">
+    <h3 class="text1">Four</h3>
+    <img src="assets/images/guitar-logo.svg" alt="" class="logo">
+    <h3 class="text2">Chords</h3>
+  </div>
+
+  <div class="sidenav-list">
     <li>
-      <a href="#" class="logout">
-        <i class='bx bx-log-out-circle'></i>
-        Logout
+      <a>
+        <mat-icon>account_circle</mat-icon>
+        <span>Profile</span>
       </a>
     </li>
-  </ul>
+
+    <li #history>
+      <a (click)="openComponentOverlay(history)">
+        <mat-icon>history</mat-icon>
+        <span>History</span>
+      </a>
+    </li>
+
+<!--    <li>-->
+<!--      <a>-->
+<!--        <mat-icon>thumb_up</mat-icon>-->
+<!--        <span>Liked</span>-->
+<!--      </a>-->
+<!--    </li>-->
+
+    <li>
+      <a>
+        <mat-icon>favorite_border</mat-icon>
+        <span>Favourites</span>
+      </a>
+    </li>
+
+    <li>
+      <a>
+        <mat-icon> list_alt</mat-icon>
+        <span>My Lists</span>
+      </a>
+    </li>
+
+    <div class="spacer"></div>
+
+    <li>
+      <a>
+        <mat-icon>settings</mat-icon>
+        <span>Options</span>
+      </a>
+    </li>
+
+  </div>
 </div>
-<!-- End of Sidebar -->
