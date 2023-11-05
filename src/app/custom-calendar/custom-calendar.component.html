@@ -1,0 +1,24 @@
+<div class="custom-calendar">
+  <div class="calendar-header">
+    <h2>{{displayDate | date: 'MMMM y' }}</h2>
+    <div class="btn">
+      <button (click)="previousMonth()"><</button>
+      <button (click)="nextMonth()">></button>
+    </div>
+  </div>
+  <table class="calendar-grid">
+    <tr>
+      <ng-container *ngFor="let day of weekDays">
+        <th>{{ day }}</th>
+      </ng-container>
+    </tr>
+    <tr *ngFor="let week of days">
+      <ng-container *ngFor="let day of week">
+        <td (click)="selectDate(day)" [class.other-month]="!isSameMonth(day)">
+          <app-calendar-cell [date]="day.getDate()" [isToday]="isToday(day)"></app-calendar-cell>
+        </td>
+      </ng-container>
+    </tr>
+  </table>
+</div>
+
