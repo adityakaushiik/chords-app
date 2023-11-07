@@ -1,4 +1,5 @@
-<div class="cell-container" [class.is-today]="isToday">
-  <div>{{date}}</div>
+<div class="cell-container">
+  <div class="cell-background-container" [ngClass]="statusClass"></div>
+  <div style="position: absolute">{{date}}</div>
 </div>
 

@@ -2,8 +2,8 @@
   <div class="calendar-header">
     <h2>{{displayDate | date: 'MMMM y' }}</h2>
     <div class="btn">
-      <button (click)="previousMonth()"><</button>
-      <button (click)="nextMonth()">></button>
+      <custom-fab-button (click)="nextMonth()"><mat-icon>keyboard_arrow_right</mat-icon></custom-fab-button>
+      <custom-fab-button (click)="previousMonth()"><mat-icon>keyboard_arrow_left</mat-icon></custom-fab-button>
     </div>
   </div>
   <table class="calendar-grid">
@@ -15,7 +15,7 @@
     <tr *ngFor="let week of days">
       <ng-container *ngFor="let day of week">
         <td (click)="selectDate(day)" [class.other-month]="!isSameMonth(day)">
-          <app-calendar-cell [date]="day.getDate()" [isToday]="isToday(day)"></app-calendar-cell>
+          <app-calendar-cell [date]="day.getDate()" [isToday]="isToday(day)" [status]="'Present'"></app-calendar-cell>
         </td>
       </ng-container>
     </tr>

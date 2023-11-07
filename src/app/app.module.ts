@@ -22,6 +22,8 @@ import { CustomCardComponent } from './utils/custom-card/custom-card.component';
 import { ParsingChordsComponent } from './parsing-chords/parsing-chords.component';
 import {FormsModule} from "@angular/forms";
 import {TooltipModule} from "./common/ui/tooltip/tooltip.module";
+import {CustomCalendarComponent} from "./custom-calendar/custom-calendar.component";
+import {CalendarCellComponent} from "./custom-calendar/calendar-cell/calendar-cell.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,8 @@ import {TooltipModule} from "./common/ui/tooltip/tooltip.module";
     CustomFabButtonComponent,
     CustomCardComponent,
     ParsingChordsComponent,
+    CustomCalendarComponent,
+    CalendarCellComponent
   ],
   imports: [
     BrowserModule,

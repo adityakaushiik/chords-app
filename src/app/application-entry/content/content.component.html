@@ -1,8 +1,8 @@
 <div class="content-card">
   <header>
     <div class="content-titles">
-      <h1>Shape Of You</h1>
-      <h2>- Ed Sheeran</h2>
+      <h1>ABCD</h1>
+      <h2>- abcd</h2>
     </div>
     <div class="content-actions">
       <custom-fab-button (mouseenter)="likedButtonHover=true" (mouseleave)="likedButtonHover=false"
@@ -21,17 +21,17 @@
 
   <mat-divider></mat-divider>
 
-  <div class="content-main">
-    <span *ngFor="let line of refinedSong" class="line">
-      <span *ngFor="let word of line.line" class="word">
-        <span class="combine">
-          <span class="chords" *ngIf="word.chord != null"
-                matTooltip="{{word.chord}} chord" matTooltipPosition="above">{{word.chord}}</span>
-          <span class="lyrics">{{word.lyrics}}</span>
-        </span>
-      </span>
-    </span>
-  </div>
+<!--  <div class="content-main">-->
+<!--    <span *ngFor="let line of refinedSong" class="line">-->
+<!--      <span *ngFor="let word of line.line" class="word">-->
+<!--        <span class="combine">-->
+<!--          <span class="chords" *ngIf="word.chord != null"-->
+<!--                matTooltip="{{word.chord}} chord" matTooltipPosition="above">{{word.chord}}</span>-->
+<!--          <span class="lyrics">{{word.lyrics}}</span>-->
+<!--        </span>-->
+<!--      </span>-->
+<!--    </span>-->
+<!--  </div>-->
 
   <mat-divider></mat-divider>
 <!--  <app-parsing-chords></app-parsing-chords>-->

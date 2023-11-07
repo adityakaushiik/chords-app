@@ -1,5 +1,5 @@
-@import "/src/assets/colors.scss";
 @import "/src/assets/animations.scss";
+@import "/src/assets/colors.scss";
 
 .sidebar {
   position: fixed;
@@ -98,7 +98,7 @@
 }
 
 .sidebar.close {
-  width: 60px;
+  width: $sidenav-close-width;
 
   .logo-container {
     h3 {
